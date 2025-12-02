@@ -1,14 +1,14 @@
 from fastapi import FastAPI
 from routers.main_routers import router as main_router
-from routers.movies_router import router as movies_router
-from routers.api_movies_router import  router as api_movies_router
+from routers.book_router import router as books_router
+from routers.api_book_router import  router as api_books_router
 import uvicorn
 
 app = FastAPI()
 
 app.include_router(main_router, tags=["main"])
-app.include_router(api_movies_router, tags=["api_movies"], prefix="/api/v2/movies")
-app.include_router(movies_router, tags=["movies"], prefix="/movies")
+app.include_router(api_books_router, tags=["api_book"], prefix="/api/v2/book")
+app.include_router(books_router, tags=["books"], prefix="/books")
 
 
 if __name__ == '__main__':

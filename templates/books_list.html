@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_.html" %}
 
 {% block title %} {{ title }} {% endblock %}
 
@@ -8,24 +8,24 @@
 {% endblock %}
 
 {% block content %}
-    {% for movie in movies %}
+    {% for book in books %}
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">{{ movie.title }}</h4>
+            <h4 class="my-0 fw-normal">{{ book.title }}</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{ movie.year }}<small class="text-muted fw-light"></small></h1>
+            <h1 class="card-title pricing-card-title">{{ book.year }}<small class="text-muted fw-light"></small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>{{ movie.description }}</li>
-              <li>{{ movie.description }}</li>
-                {% if movie.year > 1990 %}
-                    <li>Новый фильм</li>
+              <li>{{ book.description }}</li>
+              <li>{{ book.description }}</li>
+                {% if book.year > 1990 %}
+                    <li>Новая книга</li>
                 {% else %}
-                    <li>Старый фильм</li>
+                    <li>Старая книга</li>
                 {% endif %}
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Подробней</button>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Подробнее</button>
           </div>
         </div>
       </div>
