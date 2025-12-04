@@ -14,7 +14,7 @@ async def index():
 
 
 @router.get("/about/")
-async def index():
+async def about_us():
     return {"message": "О нас",
             "author": "Семенов Владимир",
             "product": "Онлайн картотека библиотеки",

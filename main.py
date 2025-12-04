@@ -7,7 +7,7 @@ import uvicorn
 app = FastAPI()
 
 app.include_router(main_router, tags=["main"])
-app.include_router(api_books_router, tags=["api_book"], prefix="/api/v2/book")
+app.include_router(api_books_router, tags=["api_books"], prefix="/api/v2/books")
 app.include_router(books_router, tags=["books"], prefix="/books")
 
 

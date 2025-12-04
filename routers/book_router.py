@@ -6,6 +6,7 @@ from models.books_list import books_list
 
 
 router = APIRouter()
+# Указываем путь где лежат шаблоны
 templates = Jinja2Templates(directory="templates")
 
 
@@ -23,7 +24,7 @@ async def book_list(request: Request):
 
 
 @router.get("/{book_id}/", response_class=HTMLResponse)
-async def movie_details(request: Request, book_id: int):
+async def book_details(request: Request, book_id: int):
     """Получить детальную информацию по списку"""
     book_id -= 1
     if book_id < 0 or book_id >= len(books_list):

@@ -12,6 +12,7 @@ async def book_list(
     title: str = Query(None, description="The title of books")
 ):
     result = books_list
+    # Фильтрация по году и заголовку
     if year is not None:
         result = [book for book in result if book.year == year]
     if title is not None:
@@ -25,6 +26,7 @@ async def book_details(book_id: int):
     """Получить детальную информацию по списку"""
     book_id -= 1
     if book_id < 0 or book_id >= len(books_list):
+        # Не выходит за пределы списка
         raise HTTPException(status_code=404, detail="Book not found")
     return books_list[book_id]
 
@@ -55,7 +57,7 @@ async def book_update(book_id: int, book: Book):
 
 
 @router.delete("/{book_id}/")
-async def book_update(book_id: int):
+async def book_delete(book_id: int):
     """Удалить книгу"""
     book_id -= 1
     if book_id < 0 or book_id >= len(books_list):
