@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_.html" %}
 
 <!-- Начало book_detail.html -->
 {% block title %} {{ book.title }} {% endblock %}
@@ -22,7 +22,7 @@
         {% if book.year > 1990 %}
             <li>Новая книга</li>
         {% else %}
-            <li>Старый книга</li>
+            <li>Старая книга</li>
         {% endif %}
     </ul>
     <button type="button" class="w-100 btn btn-lg btn-outline-primary">Подробнее</button>

@@ -2,53 +2,83 @@ from schemas.book import Book
 
 books_list = [
     Book(
-        title='Movie1',
-        year=1999,
-        description='Book description',
+        author="Краковский М.Б., Тихонов И.Н.",
+        title="Особенности расчетов нормальных сечений железобетонных конструкций по СП 63.13330.2018",
+        year=2023,
+        publishing="Москва",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie2',
-        year=1992,
-        description='Book description2',
+        author="Зенин С.А.",
+        title="Параметрическое нормирование железобетонных конструкций. Бетон и железобетон",
+        year=2025,
+        publishing="Москва",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie3',
-        year=1949,
-        description='Book description3',
+        author="Лебедева И.В., Петрова Т.А.",
+        title="Анализ современных подходов к оценке надежности в строительстве",
+        year=2023,
+        publishing="Строительство",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie4',
-        year=1999,
-        description='Book description4',
+        author="Николенко К.С., Абсиметов В.Э.",
+        title="Сборник докладов VI Международной научно-практической конференции, посвященной 50-летию кафедры строительства и городского хозяйства.",
+        year=2022,
+        publishing="Белгород",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie5',
-        year=1939,
-        description='Book description5',
+        author="",
+        title="СП 52-103-2007. Железобетонные монолитные конструкции зданий.",
+        year=2007,
+        publishing="Москва",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie1',
-        year=1999,
-        description='Book description',
+        author="",
+        title="СП 63.13330.2012. Бетонные и железобетонные конструкции. Основные положения. Актуализированная редакция СНиП 52-01-2003.",
+        year=2023,
+        publishing="",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie2',
-        year=1992,
-        description='Book description2',
+        author="Дорофеев А.А.",
+        title="Разработка  и внедрение  научно-методического обеспечения совершенствования  инженерного образования и создание системы подготовки  и повышения квалификации  преподавателей  технических  вузов",
+        year=2024,
+        publishing="Москва",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie3',
-        year=1949,
-        description='Book description3',
+        author="Колубков А.Н.",
+        title="Параметрический метод нормирования. постоянное стремление к изменениям.",
+        year=2023,
+        publishing="",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie4',
-        year=1999,
-        description='Book description4',
+        author="Гуров Л.И.",
+        title="Технологические университеты в контексте глобализации интеграции образования",
+        year=2023,
+        publishing="Интеграция образования",
+        ISBN="",
+        description=""
     ),
     Book(
-        title='Movie5',
-        year=1939,
-        description='Book description5',
+        author="Мелецинек А.В.",
+        title="Инженерная педагогика. Практика передачи технических знаний",
+        year=2023,
+        publishing="МАДИ",
+        ISBN="",
+        description=""
     ),
 ]
