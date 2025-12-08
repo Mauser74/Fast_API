@@ -6,5 +6,5 @@ class Book(BaseModel):
     title: str
     year: int
     publishing: str
-    ISBN: str
+    isbn: str
     description: str
