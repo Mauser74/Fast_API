@@ -9,23 +9,27 @@
 {% endblock %}
 
 {% block content %}
-    {% for book in books %}
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">{{book.title}}</h5>
+    <div class="row">
+        {% for book in books %}
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{book.title}}</h5>
 
-            {% if book.isbn != "" %}
-              <h6 class="card-subtitle mb-2 text-muted">ISBN: {{book.isbn}}</h6>
-            {% endif %}
+                    {% if book.isbn != "" %}
+                      <h6 class="card-subtitle mb-2 text-muted">ISBN: {{book.isbn}}</h6>
+                    {% endif %}
 
-            <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{{book.year}}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">{{book.publishing}}</h6>
-            <p class="card-text">{{book.description}}</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
-        </div>
-     {% endfor %}
+                    <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{book.year}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{book.publishing}}</h6>
+                    <p class="card-text">{{book.description}}</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                  </div>
+                </div>
+            </div>
+         {% endfor %}
+    </div>
 {% endblock %}
 <!-- Конец book_list.html -->
