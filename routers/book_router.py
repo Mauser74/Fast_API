@@ -3,6 +3,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 #from schemas.book import Book
 from models.books_list import books_list
+from view import text
 
 
 router = APIRouter()
@@ -10,30 +11,39 @@ router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
 
+
 @router.get("/", response_class=HTMLResponse)
 async def book_list(request: Request):
     context = {
         "request": request,
-        "title": "Список наших книг ",
-        "text": "Описание страницы",
-        "books": books_list,
+        "name": text.org_name,
+        "items_name": text.items_name,
+        "books": books_list
     }
-
     return templates.TemplateResponse("books_list.html", context=context)
+
+
+
+@router.get("/about", response_class=HTMLResponse)
+async def read_about(request: Request):
+    context = {
+        "request": request,
+        "name": text.org_name
+    }
+    return templates.TemplateResponse("about.html", context=context)
 
 
 
 @router.get("/{book_id}/", response_class=HTMLResponse)
 async def book_details(request: Request, book_id: int):
     """Получить детальную информацию по списку"""
-    book_id -= 1
-    if book_id < 0 or book_id >= len(books_list):
-        raise HTTPException(status_code=404, detail="Book not found")
+    for index, book in books_list:
+        if book.id == book_id:
+            context = {
+                "request": request,
+                "name": text.org_name,
+                "book": books_list[index]
+            }
+            return templates.TemplateResponse("book_detail.html", context=context)
 
-    context = {
-        "request": request,
-        "text": "Описание страницы",
-        "book": books_list[book_id],
-    }
-
-    return templates.TemplateResponse("book_detail.html", context=context)
+    raise HTTPException(status_code=404, detail="Book not found")

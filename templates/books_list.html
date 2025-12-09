@@ -4,28 +4,28 @@
 {% block title %} {{ title }} {% endblock %}
 
 {% block header %}
-    <h1 class="display-4 fw-normal">{{ title }}</h1>
-    <p class="fs-5 text-muted">{{ text }}. {{ text }}</p>
+
 {% endblock %}
 
 {% block content %}
+    <h1 class="my-3">{{ items_name }}</h1>
     <div class="row">
         {% for book in books %}
             <div class="col-sm">
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
-                    <h5 class="card-title">{{book.title}}</h5>
+                    <h5 class="card-title">{{ book.title }}</h5>
 
                     {% if book.isbn != "" %}
-                      <h6 class="card-subtitle mb-2 text-muted">ISBN: {{book.isbn}}</h6>
+                      <h6 class="card-subtitle mb-2 text-muted">ISBN: {{ book.isbn }}</h6>
                     {% endif %}
 
-                    <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
-                    <h6 class="card-subtitle mb-2 text-muted">{{book.year}}</h6>
-                    <h6 class="card-subtitle mb-2 text-muted">{{book.publishing}}</h6>
-                    <p class="card-text">{{book.description}}</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ book.year }}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ book.publishing }}</h6>
+                    <p class="card-text">{{ book.description }}</p>
+                    <a href="{{ request.url_for('book_details', book_id=book.id) }}" class="card-link">Подробнее</a>
+
                   </div>
                 </div>
             </div>
