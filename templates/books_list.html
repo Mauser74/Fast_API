@@ -1,11 +1,7 @@
 {% extends "base_.html" %}
 
 <!-- Начало book_list.html -->
-{% block title %} {{ title }} {% endblock %}
-
-{% block header %}
-
-{% endblock %}
+{% block menu1 %} "nav-link active" {% endblock %}
 
 {% block content %}
     <h1 class="my-3">{{ items_name }}</h1>
@@ -23,7 +19,6 @@
                     <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
                     <h6 class="card-subtitle mb-2 text-muted">{{ book.year }}</h6>
                     <h6 class="card-subtitle mb-2 text-muted">{{ book.publishing }}</h6>
-                    <p class="card-text">{{ book.description }}</p>
                     <a href="{{ request.url_for('book_details', book_id=book.id) }}" class="card-link">Подробнее</a>
 
                   </div>

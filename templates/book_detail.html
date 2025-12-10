@@ -1,8 +1,6 @@
 {% extends "base_.html" %}
 
-<!-- Начало book_detail.html -->
-{% block title %} {{ book.title }} {% endblock %}
-
+<!-- Начало book_list.html -->
 {% block header %}
     <h1 class="display-4 fw-normal">{{ book.title }}</h1>
     <p class="fs-5 text-muted">{{ text }}. {{ book.description }}</p>
@@ -15,17 +13,23 @@
     <h4 class="my-0 fw-normal">{{ book.title }}</h4>
   </div>
   <div class="card-body">
-    <h1 class="card-title pricing-card-title">{{ book.year }}<small class="text-muted fw-light"></small></h1>
     <ul class="list-unstyled mt-3 mb-4">
-      <li>{{ book.description }}</li>
-      <li>{{ book.description }}</li>
-        {% if book.year > 1990 %}
-            <li>Новая книга</li>
+        <h6 class="card-subtitle mb-2 text-muted">Автор: {{ book.author }}</h6>
+        {% if book.isbn != "" %}
+          <h6 class="card-subtitle mb-2 text-muted">ISBN: {{ book.isbn }}</h6>
         {% else %}
-            <li>Старая книга</li>
+          <h6 class="card-subtitle mb-2 text-muted">ISBN: n/a</h6 >
+        {% endif %}
+
+        <h6 class="card-subtitle mb-2 text-muted">Год издания: {{ book.year }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Издательство: {{ book.publishing }}</h6>
+        {% if book.description != "" %}
+            <p class="card-text">Описание: {{ book.description }}</p>
+        {% else %}
+            <p class="card-text">Описание: n/a</p>
         {% endif %}
     </ul>
-    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Подробнее</button>
+    <a href="{{ request.url_for('book_list') }}" class="card-link">Назад к списку</a>
   </div>
 </div>
 </div>

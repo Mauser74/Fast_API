@@ -37,7 +37,7 @@ async def read_about(request: Request):
 @router.get("/{book_id}/", response_class=HTMLResponse)
 async def book_details(request: Request, book_id: int):
     """Получить детальную информацию по списку"""
-    for index, book in books_list:
+    for index, book in enumerate(books_list):
         if book.id == book_id:
             context = {
                 "request": request,
