@@ -1,7 +1,3 @@
-# Установка зависимостей  
-pip install fastapi
-pip install 'uvicorn[standard]'  
-pip install jinja2
+# Домашнее задание по теме FastAPI
 
-# Запуск приложения
-uvicorn main:app --reload
+Запустить осуществлять через файл main.py
